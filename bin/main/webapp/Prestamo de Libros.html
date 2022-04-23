@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Bibilioteca Virtual</title>
+</head>
+<style>
+
+ h3 { 
+	color: black; font-family: Brush Script MT;
+	text-align: left;
+ }
+  
+  p { 
+	color: black; font-family: Arial;
+	text-align: left;
+ }
+  
+
+
+
+body {
+  font-family: Arial, Helvetica, Sans-serif;
+  color: black; <!-- Color Titulo -->;
+  background-image: url('libros4.jpg'); <!-- Canvas -->;
+  font-size: 20px;
+  text-align: center; <!-- Texto del titulo centrado -->;
+}
+
+.contenido{
+  font-size: 200%;
+  
+}
+
+</style>
+
+<body>
+
+<h1>Libros</h1>
+<h3>“La lectura de un buen libro es un diálogo incesante en que el libro habla y el alma contesta”.</h3>
+
+<form action="../../form-result.php" method="post" target="_blank">
+
+  <p>
+
+    Busqueda de libros por autor: <input type="search" name="busquedalibros" list="listalibros">
+
+    <input type="submit" value="Buscar">
+
+  </p>
+
+</form>
+
+<datalist id="listalibros">
+
+ <option value="GarciaMarquez">
+
+  <option value="Vargas llosa">
+
+  <option value="George Orwell">
+
+  <option value="Edgar Allan Poe">
+
+</datalist>
+
+
+
+ <!-- Calendario -->;
+
+
+</body>
+</html>
