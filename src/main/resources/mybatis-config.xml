@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="config.properties">
+    </properties>
+
+    <typeAliases>
+        <typeAlias type='edu.eci.cvds.entities.Usuario' alias='Usuario' />
+        <typeAlias type='edu.eci.cvds.entities.Recurso' alias='Recurso' />
+        <typeAlias type='edu.eci.cvds.entities.TipoRecurso' alias='TipoRecurso' />
+        <typeAlias type='edu.eci.cvds.entities.UbicacionRecurso' alias='UbicacionRecurso' />
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="org.postgresql.Driver" />
+                <property name="url" value="postgres://sqfqgmhjqrzgzu:24c42ee3a416894ed4e429d468983eeaf970e8bbeab231328cdfef3bbbf06c67@ec2-3-230-122-20.compute-1.amazonaws.com:5432/d5l4unc4nkl2uk" />
+                <property name="username" value="sqfqgmhjqrzgzu" />
+                <property name="password" value="24c42ee3a416894ed4e429d468983eeaf970e8bbeab231328cdfef3bbbf06c67" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="mappers/UsuarioMapper.xml"></mapper>
+        <mapper resource="mappers/RecursoMapper.xml"></mapper>
+        <mapper resource="mappers/TipoRecursoMapper.xml"></mapper>
+        <mapper resource="mappers/UbicacionRecursoMapper.xml"></mapper>
+    </mappers>
+
+</configuration>
