@@ -9,9 +9,9 @@
     xmlns:p="http://primefaces.org/ui">
 	  
 
-<head>
+<h:head>
   <title>Formulario Registro</title>
-</head>
+</h:head>
 
 <style>
 * {
@@ -71,42 +71,74 @@ body {
 }
 
 .form-register .botons {
-  width: 100%;
+  width: 40%;
   background: #1f53c5;
   border: none;
-  padding: 12px;
+  padding: 8px;
   color: white;
-  margin: 16px 0;
+  margin: 0% 30% 16px;
   font-size: 16px;
 }
+
+.table {
+  width: 96%;
+  background: #1f53c5;
+  border: none;
+  padding: 2px;
+  border-radius: 4px;
+  color: white;
+  margin: 2%;
+  
+}
+
 </style>
 
 <body>
 
-
-
-
-
-
 <section class="form-register">
+	<h:form>
     <h4>Reservar un Recurso</h4>
-    <input class="controls" type="search" name="nombre" id="nombre"  placeholder="Tipo de recurso" list="listaRec" />
+	 <p:outputPanel >
+	     <h:selectOneMenu class="controls" name="filtro" value="">
+	     <p:ajax event="change" listener="#{recursoBean.getRecurso()}" update="resultado"/>
+	        <f:selectItem itemLabel="Tipo de Recurso" itemValue="null" noSelectionOption="true"/>
+	        <f:selectItem itemValue = "1" itemLabel = "Mostrar todos" />
+	        <f:selectItem itemValue = "2" itemLabel = "Disponibles" />
+	        <f:selectItem itemValue = "3" itemLabel = "Libros" />
+	        <f:selectItem itemValue = "4" itemLabel = "Portatiles" />
+	     </h:selectOneMenu>
+	  </p:outputPanel>
     <input class="controls" type="text" name="ubicacion" id="ubicacion" placeholder="ID del recurso" />
 	<input class="controls" type="text" name="tipo" id="tipo" placeholder="Fecha fin" />
-    <input class="botons" type="submit" value="Reservar" />
-  </section>
-  
- <datalist id="listaRec">
-
- <option value="Libro" />
-
-  <option value="Sala de estudio" />
-
-  <option value="Computador" />
-
-  <option value="Tablero inteligente" />
-
-</datalist>
+	<p:commandButton class="botons" id="boton_Reservar" value="Reservar"  actionListener="#{recursoBean}"/>
+    
+    
+     
+	 </h:form>
+	 
+</section>
+<p:dataTable class="table" id="resultado" var="recurso" rows="10" paginator="true"
+                paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
+                value="#{recursoBean.getRecurso()}" selectionPageOnly="false" paginatorPosition="bottom" scrollable="true">
+	 			
+	 			<p:column headerText="ID" style="text-align: center;">
+                <h:outputText value="#{recurso.id}" />
+                </p:column>
+                <p:column headerText="Nombre" style="text-align: center;">
+                <h:outputText value="#{recurso.nombre}" />
+                </p:column>
+                <p:column headerText="Capacidad" style="text-align: center;">
+                <h:outputText value="#{recurso.capacidad}" />
+                </p:column>
+	 			<p:column headerText="Fecha Inicio" style="text-align: center;">
+                <h:outputText value="#{recurso.disponibilidadInicio}" />
+                </p:column>
+                <p:column headerText="Capacidad" style="text-align: center;">
+                <h:outputText value="#{recurso.disponibilidadFin}" />
+                </p:column>	 
+	 
+</p:dataTable>
+	 
 
 </body>
 </html>

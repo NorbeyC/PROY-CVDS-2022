@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.RecursoMapper">
+
+
+    <select id="getRecursos" resultMap="RecursoResult">
+        SELECT
+        r.id,
+        r.nombre,
+        r.capacidad,
+        r.horariodisponibilidadinicio,
+        r.horariodisponibilidadfin
+        FROM recurso as r;
+    </select>
+
+    <insert id="registrarRecurso" parameterType="map">
+        INSERT INTO recurso values ((SELECT MAX(id) +1 FROM recurso),#{recurso.nombre}, #{recurso.capacidad},#{recurso.disponibilidadInicio},#{recurso.disponibilidadFin},#{recurso.tipoRecurso},#{recurso.ubicacionRecurso} )
+    </insert>
+    
+    <resultMap type='Recurso' id='RecursoResult'>
+        <id property='id' column='id' />
+        <result property='nombre' column='nombre' />
+        <result property='capacidad' column='capacidad' />
+        <result property='disponibilidadInicio' column='disponibilidadInicio' />
+        <result property='disponibilidadFin' column='disponibilidadFin' />
+        
+    </resultMap>
+</mapper>

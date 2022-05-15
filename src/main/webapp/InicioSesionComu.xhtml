@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:color="http://java.sun.com/jsf/html" lang="en"
-
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:color="http://java.sun.com/jsf/html" lang="en"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-
+	  xmlns:xlink="http://www.w3.org/1999/xlink"
       xmlns:f="http://java.sun.com/jsf/core"
 
       xmlns:p="http://primefaces.org/ui">
 
-<head>
+<h:head>
 
-</head>
+
   <style>
   * {
   margin: 0;
@@ -82,27 +84,30 @@ body {
 }
   </style>
     
-
+</h:head>
   
   <body>
   
-    <section class="form-login" >
+  <section class="form-login" >
+    <h:form id="login_com" prependId="false">
       <h5> Bienvenido por favor inicie sesion</h5>
-      <input class="controls" type="text" name="" value="@mail.escuelaing.edu.co" placeholder="" /> 
-      <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña" />
-      
-	 <a href="formularioReserva.xhtml">
-		<input type="submit" class="buttons" value="Ingresar" />
-	 </a>
-	  
-	  
-	 
+      <p:inputText class="controls" id="float-input" value="#{shBean.userName}" placeholder="Correo" /> 
+      <p:password class="controls" id="nonFeedback" value="#{shBean.userPassword}" placeholder="Contraseña" />
+      <div>
+      	<p:commandButton id="boton_login" value="Iniciar sesión"  actionListener="#{shBean.loginUser}"/>
+      </div>
+    </h:form>	
 	</section>
-	  
-      
-
-    
-
+  
+    <!--<section class="form-login" >
+    <h:form id="login_com" prependId="false">
+      <h5> Bienvenido por favor inicie sesion</h5>
+      <input class="controls" type="text" name="" value="#{shBean.userName}" placeholder="Correo" /> 
+      <input class="controls" type="password" name="contrasena" value="#{shBean.userPassword}" placeholder="Contraseña" />
+      <p:commandButton id="boton_login" value="Iniciar sesión"  actionListener="#{shBean.loginUser()}"/>
+    </h:form>	
+	</section> -->
+	
   </body>
   
 </html>
