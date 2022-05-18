@@ -2,6 +2,7 @@ package edu.eci.cvds.services;
 
 import edu.eci.cvds.entities.Recurso;
 import edu.eci.cvds.entities.Usuario;
+import edu.eci.cvds.entities.Reservas;
 import edu.eci.cvds.persistence.UsuarioDAO;
 import com.google.inject.Inject;
 
@@ -19,4 +20,12 @@ public interface ECILibraryServices {
 	public void registrarRecurso(Recurso recurso);
 
 	public abstract Usuario validarUsuario(String username, String password) throws Exception;
+
+	public abstract List<Reservas> buscarReservasId(int id);
+
+	public abstract List<Reservas> buscarReservasUsuario(String usuario);
+
+	public List<Reservas> reservasRecurso(int id);
+
+	public abstract void crearReserva(Reservas reserva);
 }
