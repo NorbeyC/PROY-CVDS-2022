@@ -11,8 +11,14 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import edu.eci.cvds.persistence.RecursoDAO;
+import edu.eci.cvds.persistence.ReservaDAO;
+import edu.eci.cvds.persistence.TipoRecursoDAO;
+import edu.eci.cvds.persistence.UbicacionRecursoDAO;
 import edu.eci.cvds.persistence.UsuarioDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisRecursoDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisReservaDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisTipoRecursoDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisUbicacionRecursoDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisUsuarioDAO;
 import edu.eci.cvds.services.ECILibraryServices;
 import edu.eci.cvds.services.impl.ECILibraryServicesImpl;
@@ -38,6 +44,9 @@ public class GuiceContextListener implements ServletContextListener {
                 bind(ECILibraryServices.class).to(ECILibraryServicesImpl.class);
                 bind(UsuarioDAO.class).to(MyBatisUsuarioDAO.class);
                 bind(RecursoDAO.class).to(MyBatisRecursoDAO.class);
+                bind(UbicacionRecursoDAO.class).to(MyBatisUbicacionRecursoDAO.class);
+                bind(TipoRecursoDAO.class).to(MyBatisTipoRecursoDAO.class);
+                bind(ReservaDAO.class).to(MyBatisReservaDAO.class);
 
             }
         });

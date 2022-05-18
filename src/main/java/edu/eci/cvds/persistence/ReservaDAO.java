@@ -9,7 +9,7 @@ public interface ReservaDAO {
 
     public List<Reservas> ReservasId(int id);
 
-    public List<Reservas> ReservasUsuario(String usuario);
+    public List<Reservas> ReservasUsuario(int usuario);
 
     public List<Reservas> ReservasRecurso(int id);
 

@@ -14,7 +14,7 @@ public interface ReservaMapper {
 
     public List<Reservas> ReservasId(@Param("id") int id);
 
-    public List<Reservas> ReservasUsuario(@Param("usuario") String usuario);
+    public List<Reservas> ReservasUsuario(@Param("usuario") int usuario);
 
 
     public List<Reservas> ReservasRecurso(@Param("id") int id);

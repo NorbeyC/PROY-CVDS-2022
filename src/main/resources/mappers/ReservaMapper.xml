@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ReservaMapper">
+
+
+    <select id="ReservasId" resultMap="ReservaResult" parameterType="int">
+        SELECT *
+        FROM reserva as r
+        WHERE r.id = #{id};
+    </select>
+    
+    <select id="ReservasUsuario" resultMap="ReservaResult" parameterType="int">
+        SELECT *
+        FROM reserva as r
+        WHERE r.usuario = #{usuario};
+    </select>
+    
+    <select id="ReservasRecurso" resultMap="ReservaResult" parameterType="int">
+        SELECT *
+        FROM reserva as r
+        WHERE r.recurso = #{id};
+    </select>
+
+    <insert id="crearReservas" parameterType="map">
+        INSERT INTO reserva values ((SELECT MAX(id) +1 FROM reserva),#{reserva.id}, #{reserva.usuario},#{reserva.recurso},#{reserva.fechainicio},#{reserva.fechafin} )
+    </insert>
+    
+    <resultMap type='Reservas' id='ReservaResult'>
+        <id property='id' column='id' />
+        <result property='fechaInicio' column='fechaInicio' />
+        <result property='fechaFin' column='fechaFin' />
+        <result property='usuario' column='idUsuario' />
+        <result property='recurso' column='idRecurso' />
+    </resultMap>
+</mapper>

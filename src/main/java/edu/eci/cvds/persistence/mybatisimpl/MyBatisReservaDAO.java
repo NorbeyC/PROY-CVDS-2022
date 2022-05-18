@@ -28,7 +28,7 @@ public class MyBatisReservaDAO implements ReservaDAO {
     }
 
     @Override
-    public List<Reservas> ReservasUsuario(String usuario)  {
+    public List<Reservas> ReservasUsuario(int usuario)  {
 
         return reservaMapper.ReservasUsuario(usuario);
 

@@ -23,7 +23,7 @@ public interface ECILibraryServices {
 
 	public abstract List<Reservas> ReservasId(int id);
 
-	public abstract List<Reservas> ReservasUsuario(String usuario);
+	public abstract List<Reservas> ReservasUsuario(int usuario);
 
 	public List<Reservas> ReservasRecurso(int id);
 

@@ -28,7 +28,7 @@
     </select>
 
     <insert id="registrarRecurso" parameterType="map">
-        INSERT INTO recurso values ((SELECT MAX(id) +1 FROM recurso),#{recurso.nombre}, #{recurso.capacidad},#{recurso.disponibilidadInicio},#{recurso.disponibilidadFin},#{recurso.tipoRecurso},#{recurso.ubicacionRecurso} )
+        INSERT INTO recurso values ((SELECT MAX(id) +1 FROM recurso), #{recurso.nombre}, #{recurso.capacidad},#{recurso.disponibilidadInicio},#{recurso.disponibilidadFin},#{recurso.idUbicacionRecurso}, #{recurso.idTipoRecurso} )
     </insert>
     
     <resultMap type='Recurso' id='RecursoResult'>

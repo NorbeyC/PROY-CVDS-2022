@@ -68,7 +68,7 @@ public class ECILibraryServicesImpl implements ECILibraryServices {
 	}
 
 	@Override
-	public List<Reservas> ReservasUsuario(String usuario) {
+	public List<Reservas> ReservasUsuario(int usuario) {
 
 			return resevaDAO.ReservasUsuario(usuario);
 

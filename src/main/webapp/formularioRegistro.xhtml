@@ -90,8 +90,8 @@ body {
 	<p:inputText class="controls" id="tipo" type="int" value="#{recursoBean.idtiporecurso}" placeholder="Ingrese el tipo del Recurso" />
 	<p:inputText class="controls" id="capacidad" type="int" pattern="[+]?[0-9]" value="#{recursoBean.capacidad}" placeholder="Ingrese la Capacidad de Personas del Recurso" />
 	<p:inputText class="controls" id="id" type="int" value="#{recursoBean.id}" placeholder="Ingrese el Identificador del recurso" />
-	<p:inputText class="controls" id="disponibilidadInicio" type="Time" value="#{recursoBean.disponibilidadInicio}" placeholder="Ingrese la hora de inicio del recurso" />
-    <p:inputText class="controls" id="disponibilidadfin" type="Time" value="#{recursoBean.disponibilidadfin}" placeholder="Ingrese la hora de fin del recurso" />
+	<input type="time" class="controls" id="disponibilidadInicio" value="#{recursoBean.disponibilidadInicio}" placeholder="Ingrese la hora de inicio del recurso" />
+    <input type="time" class="controls" id="disponibilidadfin" value="#{recursoBean.disponibilidadfin}" placeholder="Ingrese la hora de fin del recurso" />
     <p:commandButton class="controls" id="boton_Registrar" value="Registrar"  actionListener="#{recursoBean.registrarRecurso()}"/>
   </section>
 </h:form>
