@@ -14,6 +14,7 @@ edu\eci\cvds\persistence\UsuarioDAO.class
 edu\eci\cvds\entities\UbicacionRecurso.class
 edu\eci\cvds\persistence\mybatisimpl\mappers\UsuarioMapper.class
 edu\eci\cvds\persistence\mybatisimpl\mappers\RecursoMapper.class
+edu\eci\cvds\managedbeans\ReservaBean.class
 edu\eci\cvds\guice\GuiceContextListener.class
 edu\eci\cvds\persistence\mybatisimpl\MyBatisUbicacionRecursoDAO.class
 edu\eci\cvds\persistence\mybatisimpl\mappers\TipoRecursoMapper.class

@@ -25,7 +25,7 @@
     </select>
 
     <insert id="crearReservas" parameterType="map">
-        INSERT INTO reserva values ((SELECT MAX(id) +1 FROM reserva),#{reserva.id}, #{reserva.usuario},#{reserva.recurso},#{reserva.fechainicio},#{reserva.fechafin} )
+        INSERT INTO reserva values ((SELECT MAX(id) +1 FROM reserva), #{reserva.usuario},#{reserva.recurso},#{reserva.fechaInicio},#{reserva.fechaFin} )
     </insert>
     
     <resultMap type='Reservas' id='ReservaResult'>

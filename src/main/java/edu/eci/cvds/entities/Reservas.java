@@ -14,7 +14,7 @@ public class Reservas implements Serializable{
     private LocalDateTime fechaFin;
 
 
-    public Reservas(int id, int usuario, int recurso, LocalDateTime fechaSolicitud, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean recurrente, String recurrencia, boolean cancelada) {
+    public Reservas(int id, int usuario, int recurso, LocalDateTime fechaInicio, LocalDateTime fechaFin) {
         this.id = id;
         this.usuario = usuario;
         this.recurso = recurso;
