@@ -10,7 +10,7 @@
 	  
 
 <h:head>
-  <title>Formulario Registro</title>
+  <title>Formulario Reserva</title>
 </h:head>
 
 <style>
@@ -94,35 +94,43 @@ body {
 </style>
 
 <body>
-
+<h:form>
 <section class="form-register">
-	<h:form>
+	
     <h4>Reservar un Recurso</h4>
 	 <p:outputPanel >
-	     <h:selectOneMenu class="controls" name="filtro" value="">
-	     <p:ajax event="change" listener="#{recursoBean.getRecurso()}" update="resultado"/>
-	        <f:selectItem itemLabel="Tipo de Recurso" itemValue="null" noSelectionOption="true"/>
-	        <f:selectItem itemValue = "1" itemLabel = "Mostrar todos" />
-	        <f:selectItem itemValue = "2" itemLabel = "Disponibles" />
-	        <f:selectItem itemValue = "3" itemLabel = "Libros" />
-	        <f:selectItem itemValue = "4" itemLabel = "Portatiles" />
+	     <h:selectOneMenu class="controls" name="categoria" value="#{recursoBean.categoria}">
+	     <p:ajax event="change" listener="#{recursoBean.getRecurso}" update="resultado"/>
+	        <f:selectItem itemLabel="Tipo de Recurso" itemValue="0" />
+	        <f:selectItem itemValue = "5" itemLabel = "Mostrar todos" />
+	        <f:selectItem itemValue = "1" itemLabel = "Computadores" />
+	        <f:selectItem itemValue = "2" itemLabel = "Salas de estudio" />
+	        <f:selectItem itemValue = "3" itemLabel = "Tablero digital" />
+	        <f:selectItem itemValue = "4" itemLabel = "Libros" />
+	        
 	     </h:selectOneMenu>
 	  </p:outputPanel>
-    <input class="controls" type="text" name="ubicacion" id="ubicacion" placeholder="ID del recurso" />
+    <input class="controls" type="text" name="ubicacion" id="ubicacion" placeholder="ID del recurso" value="#{recursoBean.selection.id}"/>
 	<input class="controls" type="text" name="tipo" id="tipo" placeholder="Fecha fin" />
 	<p:commandButton class="botons" id="boton_Reservar" value="Reservar"  actionListener="#{recursoBean}"/>
     
     
      
-	 </h:form>
+	 
 	 
 </section>
 <p:dataTable class="table" id="resultado" var="recurso" rows="10" paginator="true"
-                paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
-                value="#{recursoBean.getRecurso()}" selectionPageOnly="false" paginatorPosition="bottom" scrollable="true">
+                paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}" lazy=""
+                value="#{recursoBean.getRecursoBuscado()}" selectionPageOnly="false" paginatorPosition="bottom" scrollable="true">
 	 			
-	 			<p:column headerText="ID" style="text-align: center;">
+	 			<!-- <p:column headerText="ID" style="text-align: center;">
                 <h:outputText value="#{recurso.id}" />
+                <f:setPropertyActionListener value="#{recurso}" target="#{recursoBean.selection}"/>
+                </p:column> -->
+                <p:column headerText="ID" style="text-align: center;">
+                <p:commandButton  update = "" value="#{recurso.id}" style="width: 60px;">
+                     <f:setPropertyActionListener value="#{recurso}" target="#{recursoBean.selection}"/>
+                </p:commandButton>
                 </p:column>
                 <p:column headerText="Nombre" style="text-align: center;">
                 <h:outputText value="#{recurso.nombre}" />
@@ -130,14 +138,16 @@ body {
                 <p:column headerText="Capacidad" style="text-align: center;">
                 <h:outputText value="#{recurso.capacidad}" />
                 </p:column>
-	 			<p:column headerText="Fecha Inicio" style="text-align: center;">
+	 			<p:column headerText="Hora Inicio" style="text-align: center;">
                 <h:outputText value="#{recurso.disponibilidadInicio}" />
                 </p:column>
-                <p:column headerText="Capacidad" style="text-align: center;">
+                <p:column headerText="Hora Fin" style="text-align: center;">
                 <h:outputText value="#{recurso.disponibilidadFin}" />
                 </p:column>	 
 	 
 </p:dataTable>
+
+</h:form>
 	 
 
 </body>

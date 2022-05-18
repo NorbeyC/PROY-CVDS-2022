@@ -91,22 +91,14 @@ body {
   <section class="form-login" >
     <h:form id="login_com" prependId="false">
       <h5> Bienvenido por favor inicie sesion</h5>
-      <p:inputText class="controls" id="float-input" value="#{shBean.userName}" placeholder="Correo" /> 
-      <p:password class="controls" id="nonFeedback" value="#{shBean.userPassword}" placeholder="Contraseña" />
+      <p:inputText class="controls" id="float-input" type="String" value="#{shBean.userName}" placeholder="Correo" /> 
+      <p:password class="controls" id="nonFeedback" type="String" value="#{shBean.userPassword}" placeholder="Contraseña" />
       <div>
-      	<p:commandButton id="boton_login" value="Iniciar sesión"  actionListener="#{shBean.loginUser}"/>
+      	<p:commandButton id="boton_login" value="Iniciar sesión"  actionListener="#{shBean.loginUser()}"/>
       </div>
     </h:form>	
 	</section>
   
-    <!--<section class="form-login" >
-    <h:form id="login_com" prependId="false">
-      <h5> Bienvenido por favor inicie sesion</h5>
-      <input class="controls" type="text" name="" value="#{shBean.userName}" placeholder="Correo" /> 
-      <input class="controls" type="password" name="contrasena" value="#{shBean.userPassword}" placeholder="Contraseña" />
-      <p:commandButton id="boton_login" value="Iniciar sesión"  actionListener="#{shBean.loginUser()}"/>
-    </h:form>	
-	</section> -->
 	
   </body>
   

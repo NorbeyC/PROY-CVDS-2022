@@ -14,29 +14,43 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import edu.eci.cvds.services.ECILibraryServices;
 
 import org.apache.shiro.SecurityUtils;
 
 import org.apache.shiro.subject.Subject;
+
+import com.google.inject.Inject;
+
+import edu.eci.cvds.entities.Usuario;
+
 import java.io.IOException;
 import java.io.Serializable;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.RequiresGuest;
 
 
 
-//@SuppressWarnings("deprecation")
+
 @ManagedBean(name="shBean")
+@SuppressWarnings("deprecation")
 @Named
 @Stateless
-@SessionScoped
-public class ShiroBean implements Serializable{
+@ApplicationScoped
+public class ShiroBean extends BasePageBean{
     private String userName;
     private String userPassword;
     private boolean rememberMe;
     private String pagina;
     private Subject currentUser;
+    
+    @Inject
+    private ECILibraryServices ECILibraryServices;
+    
+    @Inject
+    private Usuario usuario;
 
     public String getPagina() {
         return pagina;
@@ -47,7 +61,6 @@ public class ShiroBean implements Serializable{
     }
 
     public String getUserName() {
-
 
         return userName;
 
@@ -72,9 +85,22 @@ public class ShiroBean implements Serializable{
     public void setRememberMe(boolean rme) {
         rememberMe = rme;
     }
-
-
-    public void loginUser()
+    
+    
+    public void loginUser() throws Exception{
+        usuario = ECILibraryServices.validarUsuario(userName, userPassword);
+        if(usuario != null){
+            if(usuario.getTipo().equals("Admin")){
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/formularioRegistro.xhtml?faces-redirect=true");
+            }else{
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/formularioReserva.xhtml?faces-redirect=true");
+            }
+        }else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Error", "Usuario o contraseña incorrectos"));
+        }
+    }
+    
+    /*public void loginUser()
     {
         try
         {
@@ -91,7 +117,8 @@ public class ShiroBean implements Serializable{
         } catch (IOException e) {
             FacesContext.getCurrentInstance().addMessage("shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Fallo en servidor", "Error"));
         }
-    }
+    }*/
+    
     public void logOut()
     {
         SecurityUtils.getSubject().logout();

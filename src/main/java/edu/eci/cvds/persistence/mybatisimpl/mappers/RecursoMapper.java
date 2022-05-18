@@ -9,5 +9,7 @@ public interface RecursoMapper {
 
 	public List<Recurso> getRecursos();
 	
+	public List<Recurso> getCategorias(@Param("categoria") int categoria);
+	
 	public void registrarRecurso(@Param("recurso") Recurso recurso);
 }

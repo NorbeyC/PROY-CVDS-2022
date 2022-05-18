@@ -15,8 +15,13 @@ public class MyBatisRecursoDAO implements RecursoDAO {
 	@Override
 	public List<Recurso> listarTodos() {
 		return recursoMapper.getRecursos();
-
 	}
+	
+	@Override
+	public List<Recurso> listarCategorias(int categoria) {
+		return recursoMapper.getCategorias(categoria);
+	}
+	
 	@Override
 	public void registrarRecurso(Recurso recurso){
 		recursoMapper.registrarRecurso(recurso);

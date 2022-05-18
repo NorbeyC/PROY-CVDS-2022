@@ -5,10 +5,18 @@
 
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.UsuarioMapper">
 
+    
+    <select parameterType="map" id="validarUsuario" resultMap="UsuarioResult" >
+        select *
+        from usuario as u
+        where u.correo = #{userName} AND u.contrasena = #{userPassword}
+    </select>
+    
     <resultMap type='Usuario' id='UsuarioResult'>
         <id property='numeroCarnet' column='NumeroCarnet' />
         <result property='nombre' column='nombre' />
         <result property='correo' column='correo' />
         <result property='tipo' column='tipo' />
+        <result property='contrasena' column='contrasena' />
     </resultMap>
 </mapper>

@@ -6,6 +6,17 @@
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.RecursoMapper">
 
 
+    <select id="getCategorias" resultMap="RecursoResult" parameterType="int">
+        SELECT
+        r.id,
+        r.nombre,
+        r.capacidad,
+        r.horariodisponibilidadinicio,
+        r.horariodisponibilidadfin
+        FROM recurso as r
+        WHERE idtiporecurso = #{categoria};
+    </select>
+    
     <select id="getRecursos" resultMap="RecursoResult">
         SELECT
         r.id,

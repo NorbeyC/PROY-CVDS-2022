@@ -16,5 +16,4 @@ edu\eci\cvds\services\ECILibraryServices.class
 edu\eci\cvds\persistence\RecursoDAO.class
 edu\eci\cvds\managedbeans\BasePageBean.class
 edu\eci\cvds\persistence\mybatisimpl\MyBatisRecursoDAO.class
-edu\eci\cvds\services\UserServices.class
 edu\eci\cvds\managedbeans\RecursoBean.class

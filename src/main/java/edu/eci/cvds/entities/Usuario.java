@@ -12,6 +12,8 @@ public class Usuario {
 	private String correo;
 
 	private String tipo;
+	
+	private String contrasena;
 
 	public Usuario() {
 		super();
@@ -57,5 +59,14 @@ public class Usuario {
 	public void setNumeroCarnet(int numeroCarnet) {
 		this.numeroCarnet = numeroCarnet;
 	}
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
 
 }
