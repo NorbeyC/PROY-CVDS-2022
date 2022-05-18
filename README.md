@@ -82,3 +82,7 @@ Si usted en otro caso se autentifica como un administrador al ingresar será lle
 * [Prime Faces](https://www.primefaces.org/)
 ## capa Despliegue
 * [Heroku](https://www.heroku.com/)
+
+# Enlace a la aplicación en Heroku.
+* [Heroku despliegue](https://proyecvds-grupo14.herokuapp.com/faces/index.xhtml)
+
