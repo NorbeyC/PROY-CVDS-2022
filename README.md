@@ -1,6 +1,6 @@
 # Gestión de recursos de la biblioteca grupo 14
 
-## Ciclos de vida del desarrollo del software 222-1
+## Ciclos de vida del desarrollo del software 2022-1
 
 
 ## Integrantes 
@@ -36,12 +36,49 @@ Si usted en otro caso se autentifica como un administrador al ingresar será lle
 
 
 * **Imágenes y descripción de las funcionalidades más importantes.**
+* Esta será la página inicial que verá el usuario al ingresar, nos permite ver los recursos disponibles sin necesidad de registrarse y también registrarse para poder registrar o solicitar un recurso
+
+![](https://github.com/NorbeyC/proycvds-grupo14/blob/circleci-project-setup/Imagen1.png)
+
+* además podremos encontrar una breve descripción de la escuela, su biblioteca y el valor de ser egresado de la misma.
+
+![](https://github.com/NorbeyC/proycvds-grupo14/blob/circleci-project-setup/Imagen2.png)
+
+* El boton de inicio nos redirigira a una pagina en la que podemos elegir el tipo de inicio
+ * **~NOTA:~ gracias a modificaciones en código se está logrando eliminar la selección de inicio de sección** 
 
 
-![This is a alt text.](/Documentacion/Imagen1.png" "This is a sample image.")
-![This is a alt text.](/Documentacion/Imagen2.png" "This is a sample image.")
-![This is a alt text.](/Documentacion/Imagen3.png" "This is a sample image.")
-![This is a alt text.](/Documentacion/Imagen4.png" "This is a sample image.")
-![This is a alt text.](/Documentacion/Imagen5.png" "This is a sample image.")
-![This is a alt text.](/Documentacion/Imagen6.png" "This is a sample image.")
-![This is a alt text.](/Documentacion/Imagen7.png" "This is a sample image.")
+![](https://github.com/NorbeyC/proycvds-grupo14/blob/circleci-project-setup/Imagen3.png)
+
+* En la siguiente página encontraremos un campo para ingresar el correo y un campo para ingresar la contraseña, al dar clic en el botón de **inicio sesión** podremos ingresar a nuestro espacio destinado, dependiendo del tipo de usuario que seamos (estudiante, admin)
+
+![](https://github.com/NorbeyC/proycvds-grupo14/blob/circleci-project-setup/Imagen4.png)
+
+* Luego, de ser estudiantes, podremos ingresar a la página en la que nos permitirá reservar un recurso, en ella encontraremos los recursos disponibles, y de ellos podemos elegir el que deseamos
+
+
+![](https://github.com/NorbeyC/proycvds-grupo14/blob/circleci-project-setup/Imagen5.png)
+
+* En caso de ingresar un administrador, este será redirigido directamente a la pantalla de **registrar un recurso**, en el cual como su nombre indica podrá registrar un nuevo recurso ingresando los parámetros necesarios.
+
+![](https://github.com/NorbeyC/proycvds-grupo14/blob/circleci-project-setup/Imagen7.png)
+
+
+* **Modelo E-R**
+
+![](https://github.com/NorbeyC/proycvds-grupo14/blob/circleci-project-setup/Diagrama%20E-R.jpeg)
+
+* **Diagrama de clases**
+![](https://github.com/NorbeyC/proycvds-grupo14/blob/circleci-project-setup/diagrama%20de%20clases.PNG)
+
+# Descripción de la arquitectura
+ ## Bases de datos
+* [PostgreSQL](https://www.postgresql.org/)
+## capa aplicación
+* [Intellij IDEA](https://www.jetbrains.com/es-es/idea/)
+* [Eclipse](https://www.eclipse.org/downloads/packages/)
+* [Guice](https://www.baeldung.com/guice)
+## capa presentación
+* [Prime Faces](https://www.primefaces.org/)
+## capa Despliegue
+* [Heroku](https://www.heroku.com/)
