@@ -12,13 +12,12 @@ public class Reservas implements Serializable{
     private int recurso;
     private LocalDateTime fechaInicio;
     private LocalDateTime fechaFin;
-    private LocalDateTime fechaSolicitud;
+
 
     public Reservas(int id, int usuario, int recurso, LocalDateTime fechaSolicitud, LocalDateTime fechaInicio, LocalDateTime fechaFin, boolean recurrente, String recurrencia, boolean cancelada) {
         this.id = id;
         this.usuario = usuario;
         this.recurso = recurso;
-        this.fechaSolicitud = fechaSolicitud;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
     }
@@ -31,9 +30,7 @@ public class Reservas implements Serializable{
         return fechaFin.format(DateTimeFormatter.ofPattern(DATE_FORMATTER));
     }
 
-    public String getFechaSolicitudF(){
-        return fechaSolicitud.format(DateTimeFormatter.ofPattern(DATE_FORMATTER));
-    }
+
 
     public int getId() {
         return id;
@@ -75,13 +72,8 @@ public class Reservas implements Serializable{
         this.fechaFin = fechaFin;
     }
 
-    public LocalDateTime getFechaSolicitud() {
-        return fechaSolicitud;
-    }
 
-    public void setFechaSolicitud(LocalDateTime fechaSolicitud) {
-        this.fechaSolicitud = fechaSolicitud;
-    }
+
 
 
 

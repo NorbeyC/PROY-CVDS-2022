@@ -13,31 +13,31 @@ public class MyBatisReservaDAO implements ReservaDAO {
     ReservaMapper reservaMapper;
 
     @Override
-    public void crearReserva(Reservas reserva)  {
+    public void CrearReserva(Reservas reservas)  {
 
-        reservaMapper.crearReserva(reserva);
+        reservaMapper.crearReservas(reservas);
 
-
-    }
-
-    @Override
-    public List<Reservas> buscarReservasId(int id)  {
-
-        return reservaMapper.buscarReservasId(id);
 
     }
 
     @Override
-    public List<Reservas> buscarReservasUsuario(String usuario)  {
+    public List<Reservas> ReservasId(int id)  {
 
-        return reservaMapper.buscarReservasUsuario(usuario);
+        return reservaMapper.ReservasId(id);
 
     }
 
     @Override
-    public List<Reservas> reservasRecurso(int id)  {
+    public List<Reservas> ReservasUsuario(String usuario)  {
 
-        return reservaMapper.reservasRecurso(id);
+        return reservaMapper.ReservasUsuario(usuario);
+
+    }
+
+    @Override
+    public List<Reservas> ReservasRecurso(int id)  {
+
+        return reservaMapper.ReservasRecurso(id);
 
     }
 

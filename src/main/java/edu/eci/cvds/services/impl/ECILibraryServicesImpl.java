@@ -61,30 +61,30 @@ public class ECILibraryServicesImpl implements ECILibraryServices {
     }
 
 	@Override
-	public List<Reservas> buscarReservasId(int id)  {
+	public List<Reservas> ReservasId(int id)  {
 
-			return resevaDAO.buscarReservasId(id);
-
-	}
-
-	@Override
-	public List<Reservas> buscarReservasUsuario(String usuario) {
-
-			return resevaDAO.buscarReservasUsuario(usuario);
+			return resevaDAO.ReservasId(id);
 
 	}
 
 	@Override
-	public List<Reservas> reservasRecurso(int id) {
+	public List<Reservas> ReservasUsuario(String usuario) {
 
-			return resevaDAO.reservasRecurso(id);
+			return resevaDAO.ReservasUsuario(usuario);
 
 	}
 
 	@Override
-	public void crearReserva(Reservas reserva)  {
+	public List<Reservas> ReservasRecurso(int id) {
 
-			resevaDAO.crearReserva(reserva);
+			return resevaDAO.ReservasRecurso(id);
+
+	}
+
+	@Override
+	public void CrearReserva(Reservas reserva)  {
+
+			resevaDAO.CrearReserva(reserva);
 
 	}
 

@@ -10,14 +10,14 @@ import java.util.Map;
 
 public interface ReservaMapper {
 
-    public void crearReserva(@Param("reserva") Reservas reserva);
+    public void crearReservas(@Param("reserva") Reservas reservas);
 
-    public List<Reservas> buscarReservasId(@Param("id") int id);
+    public List<Reservas> ReservasId(@Param("id") int id);
 
-    public List<Reservas> buscarReservasUsuario(@Param("usuario") String usuario);
+    public List<Reservas> ReservasUsuario(@Param("usuario") String usuario);
 
 
-    public List<Reservas> reservasRecurso(@Param("id") int id);
+    public List<Reservas> ReservasRecurso(@Param("id") int id);
 
 
 }

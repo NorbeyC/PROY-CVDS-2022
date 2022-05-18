@@ -21,11 +21,11 @@ public interface ECILibraryServices {
 
 	public abstract Usuario validarUsuario(String username, String password) throws Exception;
 
-	public abstract List<Reservas> buscarReservasId(int id);
+	public abstract List<Reservas> ReservasId(int id);
 
-	public abstract List<Reservas> buscarReservasUsuario(String usuario);
+	public abstract List<Reservas> ReservasUsuario(String usuario);
 
-	public List<Reservas> reservasRecurso(int id);
+	public List<Reservas> ReservasRecurso(int id);
 
-	public abstract void crearReserva(Reservas reserva);
+	public abstract void CrearReserva(Reservas reserva);
 }

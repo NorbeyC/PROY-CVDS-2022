@@ -5,13 +5,13 @@ import edu.eci.cvds.entities.Reservas;
 import java.util.List;
 
 public interface ReservaDAO {
-    public void crearReserva(Reservas reserva);
+    public void CrearReserva(Reservas reserva);
 
-    public List<Reservas> buscarReservasId(int id);
+    public List<Reservas> ReservasId(int id);
 
-    public List<Reservas> buscarReservasUsuario(String usuario);
+    public List<Reservas> ReservasUsuario(String usuario);
 
-    public List<Reservas> reservasRecurso(int id);
+    public List<Reservas> ReservasRecurso(int id);
 
 
 }
